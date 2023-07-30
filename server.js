@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
@@ -19,6 +20,6 @@ app.post("/api", async (req, res) => {
 
   res.send(data);
 });
-app.listen(5000, () => {
-  console.log("listening on port 5000");
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
 });
