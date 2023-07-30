@@ -7,7 +7,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 app.use(cors());
-
+app.get("/", (req, res) => {
+  res.send({ Hello: "This is backend!" });
+});
 app.post("/api", async (req, res) => {
   const location = req.body.location;
   const response = await fetch(
